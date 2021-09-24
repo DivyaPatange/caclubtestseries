@@ -1,0 +1,886 @@
+html {
+    scroll-behavior: smooth;
+    transition: 0.3s;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+}
+
+.h1,
+h1 {
+    font-size: 2rem;
+}
+
+
+header {
+    background: linear-gradient(to right, #c04848, #480048);
+    box-shadow: 2px 3px 3px gray;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1 !important;
+}
+
+.container-main {
+
+
+    z-index: 1 !important;
+}
+
+
+.user_profile {
+    margin-right: 80px;
+
+}
+
+
+
+
+.container-bg {
+
+    width: 100%;
+    position: absolute;
+    top: 0;
+    animation: animate 18s ease-in-out infinite;
+    background-size: cover;
+    z-index: -2;
+
+}
+
+
+
+.outer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 620px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+.prev-icon,
+.next-icon {
+    background-color: red;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+@keyframes animate {
+
+    0%,
+    100% {
+        background-image: url(img/slider-1.jpg);
+        width: 100%;
+        height: 620px;
+        background-position: center;
+        object-fit: cover;
+    }
+
+    25% {
+        background-image: url(img/slider-2.jpg);
+        width: 100%;
+        height: 620px;
+        background-position: center;
+        object-fit: cover;
+
+    }
+
+    50% {
+        background-image: url(img/slider-3.png);
+        width: 100%;
+        height: 620px;
+        background-position: center;
+        object-fit: cover;
+
+    }
+
+
+
+}
+
+
+
+
+
+/* DEMO-SPECIFIC STYLES */
+
+.typewriter {
+    width: 100%;
+    margin: auto;
+
+}
+
+.typewriter h1 {
+    color: #fff;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+
+    /* Ensures the content is not revealed until the animation */
+    /* border-right: .10em solid orange; The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em;
+    /* Adjust as needed */
+    animation:
+        typing 1.5s steps(20, end),
+        blink-caret .5s step-start infinite;
+}
+
+.typewriter h1:nth-child(2) {
+    color: #fff;
+    font-size: 40px;
+
+    font-family: 'Times New Roman', Times, serif;
+
+    /* Ensures the content is not revealed until the animation */
+    /* border-right: .10em solid orange; The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em;
+    /* Adjust as needed */
+    animation:
+        typing 2.5s steps(20, end),
+        blink-caret .6s step-start infinite;
+}
+
+.typewriter h1:nth-child(3) {
+    color: #fff;
+    font-size: 40px;
+
+    font-family: 'Times New Roman', Times, serif;
+
+    /* Ensures the content is not revealed until the animation */
+    /* border-right: .10em solid orange; The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em;
+    /* Adjust as needed */
+    animation:
+        typing 3.5s steps(20, end),
+        blink-caret .6s step-start infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: orange
+    }
+}
+
+
+
+.container-card {
+    margin-top: 550px;
+
+}
+
+.container-user {
+    margin-top: 150px;
+}
+
+.card-column {
+
+    width: 100%;
+    background-image: linear-gradient(to left, #cb356b, #bd3f32);
+
+    color: white;
+}
+
+.card-column:nth-child(even) {
+    background-image: linear-gradient(to left, #cb3567, #bd9832);
+    color: white;
+    width: 100%;
+}
+
+
+table tr th {
+    background-image: linear-gradient(to left, #cb356b, #bd3f32);
+    color: white;
+    font-size: 18px;
+
+}
+
+table tr th,
+td {
+    text-align: center;
+}
+
+
+.main_about_block,
+.main_howwork_block {
+    background-image: linear-gradient(to left, #cb356b, #bd3f32);
+    font-family: sans-serif;
+    color: white;
+}
+
+.about-block {
+
+
+    color: white;
+    padding: 30px;
+
+}
+
+.about-block ul li {
+
+    text-align: left;
+
+    list-style-type: none;
+    line-height: 1.5;
+
+}
+
+.about-block ul li:nth-child(odd) {
+
+    text-align: left;
+
+
+
+}
+
+.fa-angle-right {
+    padding-right: 10px;
+    color: #f2aa4cff;
+
+}
+
+
+
+.card-plan {
+    background-color: rgb(63, 63, 63);
+    border-radius: 10px;
+    color: white;
+    padding: 20px;
+}
+
+
+.card-body {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.card-body h4 {
+    color: #f2aa4cff;
+}
+
+.card-body ul li {
+
+    text-align: left;
+    border-bottom: 1px dashed #f2aa4cff;
+    list-style-type: none;
+    line-height: 1.5;
+
+}
+
+.card-body ul li::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f00c";
+    display: inline-block;
+    padding-left: 0px;
+    vertical-align: middle;
+    font-weight: bold;
+    color: #ffffff;
+    padding-right: 10px;
+    position: absolute;
+    left: 0px;
+
+}
+
+.card-body ul li:nth-child(odd) {
+
+    padding-top: 15px;
+
+}
+
+
+
+
+
+.join-btn {
+    padding: 12px 35px;
+    border: none;
+    background-color: #ffb03b;
+    color: white;
+    font-weight: bold;
+
+}
+
+
+input[type=text],
+input[type=password], input[type=number] {
+    width: 100%;
+    padding: 6px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type=text]:focus {
+    outline: 1px groove aqua;
+}
+
+input[type=password]:focus {
+    outline: 1px groove aqua;
+}
+
+input[type=number]:focus {
+    outline: 1px groove aqua;
+}
+
+
+/* Set a style for all buttons */
+.btn-log {
+    padding: 6px 16px;
+    background: #ffc40c;
+    color: #422057FF;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn-log:focus {
+    outline: none;
+
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.container-model {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal0 {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content-main {
+    background-color: rgb(243, 236, 174);
+    margin: 5% auto 15% auto;
+    /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+label {
+    color: #194376;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+
+    .cancelbtn {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+.modal-2 {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    padding-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.modal-header {
+    color: black;
+}
+
+
+
+
+:root {
+    --bg: #dcdde1;
+    --color-icon: #535c68;
+    --social-icon1: #e4405f;
+    --social-icon2: #3b5999;
+    --social-icon3: #e4405f;
+    --social-icon4: #cd201f;
+    --social-icon5: #0077B5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.icon-list {
+
+    display: flex;
+
+}
+
+.icon-item {
+    list-style: none;
+}
+
+.icon-link {
+    display: inline-flex;
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--color-icon);
+    width: 3rem;
+    height: 3rem;
+    transition: .5s linear;
+    position: relative;
+    z-index: 1;
+    margin: auto
+}
+
+.icon-link:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.icon-link i {
+    margin: auto;
+}
+
+.icon-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #000;
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(0);
+    transition: 0.3s cubic-bezier(.95, .32, .37, 1.21);
+}
+
+.icon-link:hover::before {
+    transform: scale(1) !important;
+}
+
+.icon-item:nth-child(1) a:hover:before {
+    background: var(--social-icon1);
+}
+
+.icon-item:nth-child(2) a:hover:before {
+    background: var(--social-icon2);
+}
+
+.icon-item:nth-child(3) a:hover:before {
+    background: var(--social-icon4);
+}
+
+.icon-item:nth-child(4) a:hover:before {
+    background: var(--social-icon5);
+}
+
+
+.testimonial_subtitle {
+    color: #0aaa7a;
+    font-size: 12px;
+}
+
+.testimonial_btn {
+    background-color: #373d4b !important;
+    color: #fff !important;
+}
+
+.seprator {
+    height: 2px;
+    width: 56px;
+    background-color: #0aaa7a;
+    margin: 7px 0 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-from {
+    background-image: linear-gradient(to left, #cb356b, #bd3f32);
+
+
+}
+
+.send-btn {
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px 40px;
+    color: white;
+    background-color: black;
+    border-radius: 0px;
+}
+
+
+.main-footer {
+    background: linear-gradient(to right, #c04848, #480048);
+
+    color: white;
+
+}
+
+.back-to-top {
+    position: fixed;
+
+    right: 30px;
+    bottom: 30px;
+    z-index: 11;
+    animation: action 1s infinite alternate;
+}
+
+
+
+.modal_reg {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+.modal_content_reg {
+    text-align: left;
+    background-color: rgb(243, 236, 174);
+    margin: 5% auto 15% auto;
+    /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 100px;
+    border-radius: 50%;
+}
+
+
+
+
+
+/* Media Queries */
+
+@media screen and (max-width:1235px) {
+    .typewriter h1 {
+        font-size: 30px;
+
+    }
+
+    .typewriter h1:nth-child(2) {
+        font-size: 30px;
+    }
+
+    .typewriter h1:nth-child(3) {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width:1040px) {
+
+    table tr th,
+    td {
+        text-align: left;
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (max-width:1030px) {
+    .navbar-brand {
+        display: none;
+    }
+}
+
+@media screen and (max-width:975px) {
+
+    .logo-img {
+        width: 80px;
+    }
+
+    .container-card {
+        padding: 0px;
+    }
+
+    .container-sample h2 {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+
+}
+
+@media screen and (max-width:950px) {
+    .typewriter h1 {
+        font-size: 25px;
+
+    }
+
+    .typewriter h1:nth-child(2) {
+        font-size: 25px;
+
+    }
+
+    .typewriter h1:nth-child(3) {
+        font-size: 25px;
+
+    }
+}
+
+@media screen and (max-width:750px) {
+    .navbar-brand {
+        display: block !important;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .yellow-bg-text {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .typewriter {
+        width: 100%;
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+
+    .typewriter h1 {
+        font-size: 10px;
+        line-height: 20px;
+        width: 100%;
+    }
+
+    .typewriter h1:nth-child(2) {
+        font-size: 10px;
+        line-height: 20px;
+        width: 100%;
+    }
+
+    .typewriter h1:nth-child(3) {
+        font-size: 10px;
+        line-height: 20px;
+        width: 100%;
+    }
+
+    .text-heading {
+        font-size: 24px;
+    }
+}
+
+
+
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 1017px;
+        margin: 1.75rem auto;
+    }
+}
+
+@media screen and (max-width:440px) {
+
+    .navbar-brand {
+
+        text-align: left;
+
+        font-size: 10px;
+    }
+
+    .join-btn {
+        padding: 8px 28px;
+    }
+}
