@@ -52,8 +52,16 @@
                         <a class="nav-link text-light" href="#contact"> Contact Us </a>
                     </li>
                 </ul>
-                <button onclick="document.getElementById('id01').style.display='block'" class="btn-log mr-2">Log In</button>
-                <button onclick="document.getElementById('id02').style.display='block'" class="btn-log">Register</button>
+                @guest
+                    @if (Route::has('login'))
+                        <button onclick="document.getElementById('id01').style.display='block'" class="btn-log mr-2">Log In</button>
+                    @endif
+                    @if (Route::has('register'))
+                        <button onclick="document.getElementById('id02').style.display='block'" class="btn-log">Register</button>
+                    @endif
+                @else
+                    <a href="{{ url('/home') }}"><button class="btn-log mr-2">Home</button></a>
+                @endguest
                 <div id="id01" class="modal0">
                     <div class="modal-content-main animate">
                         <form class="" action="{{ route('login') }}" method="post">
@@ -90,7 +98,7 @@
                                                 Sign Up
                                             </button>
                                         </p>
-                                        <p> Forgot <a href="#">password?</a></p>
+                                        <p> Forgot <a href="{{ url('forgot-password') }}">password?</a></p>
                                     </div>
 
                                 </div>

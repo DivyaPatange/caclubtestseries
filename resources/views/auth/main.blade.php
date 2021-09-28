@@ -74,6 +74,12 @@
             $("#password").focus();
             return false;
         }
+        if (password.length!==6) {
+            $("#pwd_err").fadeIn().html("Required 6 digits password");
+            setTimeout(function(){ $("#pwd_err").fadeOut(); }, 3000);
+            $("#password").focus();
+            return false;
+        }
         if (confirmed_pwd=="") {
             $("#conf_pwd_err").fadeIn().html("Required");
             setTimeout(function(){ $("#conf_pwd_err").fadeOut(); }, 3000);
@@ -88,6 +94,12 @@
         }
         if (mobile_no=="") {
             $("#mobile_err").fadeIn().html("Required");
+            setTimeout(function(){ $("#mobile_err").fadeOut(); }, 3000);
+            $("#mobile_no").focus();
+            return false;
+        }
+        if (mobile_no.length !== 10) {
+            $("#mobile_err").fadeIn().html("Required 10 digits.");
             setTimeout(function(){ $("#mobile_err").fadeOut(); }, 3000);
             $("#mobile_no").focus();
             return false;
