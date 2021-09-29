@@ -22,6 +22,11 @@ use App\Http\Controllers\ForgotPasswordController;
 |
 */
 
+Route::get('/migrate', function () {
+    $exitCode = Artisan::call('migrate');
+    return 'DONE'; //Return anything
+});
+
 Route::get('/', function () {
     return view('index');
 });
@@ -52,6 +57,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
     Route::get('upload-paper', [UploadPaperController::class, 'index'])->name('upload-paper');
     Route::post('upload-paper', [UploadPaperController::class, 'store'])->name('paper-submit');
     Route::delete('upload-paper/{id}', [UploadPaperController::class, 'destroy'])->name('paper-delete');
+    Route::get('/get-course-name', [UploadPaperController::class, 'getCourseName'])->name('get-course-name');
 
 });
 
@@ -63,3 +69,4 @@ Route::get('search-email', [ForgotPasswordController::class, 'search'])->name('s
 Route::post('forgot-password', [ForgotPasswordController::class, 'store'])->name('forgot-password');
 Route::get('search-approval', [TestSeriesController::class, 'searchApproval'])->name('search-approval');
 Route::post('approve', [TestSeriesController::class, 'approve'])->name('approve');
+Route::get('/test-referral-code', [TestSeriesController::class, 'searchReferralCode'])->name('test-referral-code');

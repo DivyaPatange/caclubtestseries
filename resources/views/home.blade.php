@@ -601,7 +601,7 @@
         @else 
         <div class="row ">
             <?php 
-                $paper = DB::table('upload_papers')->where('course', $testPayment->course_name)->first();
+                $paper = DB::table('upload_papers')->where('user_id', auth()->user()->id)->first();
             ?>
             <div class="col-sm-12 col-lg-6 card-column p-5 text-center">
                 @if(!empty($paper))
@@ -844,6 +844,6 @@ $(document).ready(function () {
         })
         // end of ajax call
     });
-    })
+})
 </script>
 @endsection

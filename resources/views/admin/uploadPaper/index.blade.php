@@ -40,19 +40,24 @@
                     <div class="form-row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label>Course Name</label>
-                                <select class="form-control @error('course_name') is-invalid @enderror" name="course_name">
+                                <label>User</label>
+                                <select class="form-control @error('user_name') is-invalid @enderror" name="user_name" id="user_name">
                                     <option value="">-Select-</option>
-                                    <option value="CA Final (New Course)">CA Final (New Course)</option>
-                                    <option value="CA Final (Old Course)">CA Final (Old Course)</option>
-                                    <option value="CA Intermediate">CA Intermediate</option>
-                                    <option value="CA IPCC">CA IPCC</option>
+                                    @foreach($users as $user)
+                                    <option value="{{ $user->user_id }}" @if($user->user_id = old('user_name')) Selected @endif>{{ $user->name }}</option>
+                                    @endforeach
                                 </select>
-                                @error('course_name')
+                                @error('user_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Course Name</label>
+                                <input type="text" class="form-control" name="course_name" id="course_name" value="{{ old('course_name') }}" readonly>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -66,8 +71,8 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-md-4 text-center">
-                           <button type="submit" class="btn btn-success mt-3" ><i class="fa fa-upload"></i> Upload Test Paper</button>
+                        <div class="col-md-4">
+                           <button type="submit" class="btn btn-success" ><i class="fa fa-upload"></i> Upload Test Paper</button>
                         </div>
                     </div>
                 </form>
@@ -82,6 +87,7 @@
                     <thead>
                       <tr>
                         <th>Sr. no.</th>
+                        <th>User Name</th>
                         <th>Course Name</th>
                         <th>File</th>
                         <th>Action</th>
@@ -122,6 +128,7 @@ $(document).ready(function() {
     },
     columns: [
         { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false,searchable: false },
+        { data: 'user_id', name: 'user_id' },
         { data: 'course', name: 'course' },
         { data: 'file', name: 'file' },
         { data: 'action', name: 'action' },
@@ -148,5 +155,28 @@ $('body').on('click', '.delete', function () {
         });
     }
 });
+
+$(document).ready(function () {
+    // keyup function looks at the keys typed on the search box
+    $('#user_name').on('change',function() {
+        // the text typed in the input field is assigned to a variable 
+        var query = $(this).val();
+        // call to an ajax function
+        $.ajax({
+            // assign a controller function to perform search action - route name is search
+            url:"{{ route('admin.get-course-name') }}",
+            // since we are getting data methos is assigned as GET
+            type:"GET",
+            // data are sent the server
+            data:{'user_id':query},
+            // if search is succcessfully done, this callback function is called
+            success:function (data) {
+                // print the search results in the div called country_list(id)
+                $('#course_name').val(data);
+            }
+        })
+        // end of ajax call
+    });
+})
 </script>
 @endsection
